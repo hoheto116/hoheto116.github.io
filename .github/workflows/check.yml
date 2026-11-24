@@ -13,3 +13,9 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run build
       - run: npm run typecheck
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-preview
+          path: out/
+          retention-days: 7
+          if-no-files-found: error
